@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if [ ! -s $HOME/.antigen.zsh ]
-then
-  echo "Downloading antigen..."
-  curl -L git.io/antigen > $HOME/.antigen.zsh
-fi
-
 # Install NeoVim config.
 if command -v nvim 2>&1 >/dev/null 
 then
@@ -21,13 +15,22 @@ else
   echo "NeoVim is not installed, skipping..."
 fi
 
-# Install zshrc
-if [ -e $HOME/.zshrc ]
+# Install bashrc
+if [ -e $HOME/.bashrc ]
 then
-  echo "Previous zshrc found, skipping..."
+  echo "Previous bashrc found, skipping..."
 else
-  echo "Linking zshrc..."
-  ln -s $PWD/.zshrc $HOME/
+  echo "Linking bashrc..."
+  ln -s $PWD/.bashrc $HOME/
+fi
+
+# Install bash_profile
+if [ -e $HOME/.bash_profile ]
+then
+  echo "Previous bash_profile found, skipping..."
+else
+  echo "Linking bash_profile..."
+  ln -s $PWD/.bash_profile $HOME/
 fi
 
 # Install tmux config.

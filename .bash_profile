@@ -1,10 +1,7 @@
-source $HOME/.antigen.zsh
-
-antigen use oh-my-zsh
-antigen theme robbyrussell
-antigen apply
-
 export XDG_CONFIG_HOME="$HOME/.config"
+
+export HOMEBREW_PREFIX="/opt/homebrew"
+[ -d $HOMEBREW_PREFIX ] && export PATH=$PATH:$HOMEBREW_PREFIX/bin
 
 # Set up SDK Man if it is installed.
 # see https://sdkman.io/
@@ -19,9 +16,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set up pyenv if installed.
 # See https://github.com/pyenv/pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[ -d $PYENV_ROOT/bin ] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+PYENV_ROOT="$HOME/.pyenv"
+if [ -d $PYENV_ROOT/bin ] 
+then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init - bash)"
+fi
 
 # Set up spt cli if installed.
 SPT_TOOL=$HOME/.local/bin
@@ -41,7 +41,7 @@ fi
 SPOTIFY_DEVEX=/opt/spotify-devex/bin
 [ -d $SPOTIFY_DEVEX ] && export PATH=$PATH:$SPOTIFY_DEVEX
 
-command -v nvim 2>&1 >/dev/null && alias vim=nvim
-alias l=ls
-command -v tmux 2>&1 > /dev/null && alias tmux='TERM=xterm-256color tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
-export PATH=/opt/spotify-devex/bin:$PATH
+
+if [[ -f ~/.bashrc ]]; then
+  source ~/.bashrc
+fi
