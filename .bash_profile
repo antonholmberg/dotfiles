@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export HOMEBREW_PREFIX="/opt/homebrew"
-[ -d $HOMEBREW_PREFIX ] && export PATH=$PATH:$HOMEBREW_PREFIX/bin
+[ -d $HOMEBREW_PREFIX ] && export PATH=$HOMEBREW_PREFIX/bin:$PATH
 
 # Set up SDK Man if it is installed.
 # see https://sdkman.io/
