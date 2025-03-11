@@ -31,7 +31,7 @@ SPT_TOOL=$HOME/.local/bin
 SPOTIFY_ANDROID_HOME=$HOME/.vulcan/cache/commandlinetools-mac-6858069_latest.zip-9442ad74b2d40ddb9c00459dd7dc096c5dffdf18/extracted
 [ -d $SPOTIFY_ANDROID_HOME ] && export ANDROID_HOME=$SPOTIFY_ANDROID_HOME
 
-if [ -z "$ANDROID_HOME" ] 
+if [ -d "$ANDROID_HOME" ] 
 then
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools

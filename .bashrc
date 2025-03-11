@@ -7,3 +7,7 @@ alias ls='ls -G'
 HOME_BREW_BASH_COMPLETION=$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh
 ROOT_BASH_COMPLETION=$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh
 [ -s $HOME_BREW_BASH_COMPLETION ] && . "$HOME_BREW_BASH_COMPLETION"
+
+# Set up fzf terminal tools
+# Run `$(brew --prefix)/opt/fzf/install` to generate.
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
