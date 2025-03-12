@@ -51,20 +51,22 @@ fi
 if command -v alacritty 2>&1 > /dev/null
 then
   [ -d $HOME/.config/alacritty ] || mkdir -p $HOME/.config/alacritty
-  if [ -e $HOME/.config/alacritty/alacritty.toml ]
+  if [ -e $HOME/.config/alacritty/alacritty.yml ]
   then
     echo "Previous alacritty config file exists, skipping..."
   else
     echo "Linking alacritty config..."
-    ln -s $PWD/alacritty/alacritty.toml $HOME/.config/alacritty
+    ln -s $PWD/alacritty/alacritty.yml $HOME/.config/alacritty
   fi
 
-  if [ -e $HOME/.config/alacritty/catppuccin-mocha.toml ]
+  [ -d $HOME/.config/alacritty/catppuccin ] || mkdir -p $HOME/.config/alacritty/catppuccin
+
+  if [ -e $HOME/.config/alacritty/catppuccin/catppuccin-mocha.yml ]
   then
     echo "Previous catppuccin config file exists, skipping..."
   else
     echo "Linking catppuccin-mocha theme..."
-    ln -s $PWD/alacritty/catppuccin-mocha.toml $HOME/.config/alacritty
+    ln -s $PWD/alacritty/catppuccin/catppuccin-mocha.yml $HOME/.config/alacritty/catppuccin
   fi
 else
   echo "Alacritty not installed, skipping..."
