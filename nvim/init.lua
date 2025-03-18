@@ -48,7 +48,12 @@ lazy.setup({
     end
   },
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-  {"neovim/nvim-lspconfig"},
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require('lspconfig').rust_analyzer.setup{}
+    end
+  },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 })
 
