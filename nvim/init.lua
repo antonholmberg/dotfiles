@@ -52,6 +52,8 @@ lazy.setup({
     "neovim/nvim-lspconfig",
     config = function()
       require('lspconfig').rust_analyzer.setup{}
+      require'lspconfig'.gopls.setup{}
+      require'lspconfig'.pylsp.setup{}
     end
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
