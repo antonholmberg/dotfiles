@@ -41,6 +41,8 @@ fi
 SPOTIFY_DEVEX=/opt/spotify-devex/bin
 [ -d $SPOTIFY_DEVEX ] && export PATH=$PATH:$SPOTIFY_DEVEX
 
+SPOTIFY_CLAUDE_CODE_SETUP = "$HOME/.spt-claude-code"
+[ -f $CLAUDE_CODE_SETUP ] && source $SPOTIFY_CLAUDE_CODE_SETUP
 
 if [[ -f ~/.bashrc ]]; then
   source ~/.bashrc

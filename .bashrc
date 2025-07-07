@@ -16,7 +16,4 @@ ROOT_BASH_COMPLETION=$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh
 # Run `$(brew --prefix)/opt/fzf/install` to generate.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# SPT CONFIG BEGIN
 export PATH=$PATH:/Users/aholmberg/.local/bin
-# SPT CONFIG END
-export PATH=/opt/spotify-devex/bin:$PATH
