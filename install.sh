@@ -63,10 +63,18 @@ then
 
   if [ -e $HOME/.config/alacritty/catppuccin/catppuccin-mocha.yml ]
   then
-    echo "Previous catppuccin config file exists, skipping..."
+    echo "Previous catppuccin-mocha config file exists, skipping..."
   else
     echo "Linking catppuccin-mocha theme..."
     ln -s $PWD/alacritty/catppuccin/catppuccin-mocha.yml $HOME/.config/alacritty/catppuccin
+  fi
+
+  if [ -e $HOME/.config/alacritty/catppuccin/catppuccin-latte.yml ]
+  then
+    echo "Previous catppuccin-latte config file exists, skipping..."
+  else
+    echo "Linking catppuccin-latte theme..."
+    ln -s $PWD/alacritty/catppuccin/catppuccin-latte.yml $HOME/.config/alacritty/catppuccin
   fi
 else
   echo "Alacritty not installed, skipping..."

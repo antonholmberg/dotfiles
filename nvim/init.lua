@@ -44,7 +44,7 @@ lazy.setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       -- calling `setup` is optional for customization
-      require("fzf-lua").setup({})
+      require("fzf-lua").setup({"hide"})
     end
   },
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
@@ -54,15 +54,18 @@ lazy.setup({
       require('lspconfig').rust_analyzer.setup{}
       require'lspconfig'.gopls.setup{}
       require'lspconfig'.pylsp.setup{}
+      require'lspconfig'.kotlin_language_server.setup{}
     end
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "github/copilot.vim", name = "copilot.vim" }
 })
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('catppuccin-mocha')
+vim.cmd.colorscheme('catppuccin-latte')
 
 vim.g.mapleader = ','
+vim.keymap.set('n', '<leader>gf', require('fzf-lua').git_files, {})
 vim.keymap.set('n', '<leader>ff', require('fzf-lua').files, {})
 vim.keymap.set('n', '<leader>fg', require('fzf-lua').grep, {})
 vim.keymap.set('n', '<leader>fb', require('fzf-lua').buffers, {})

@@ -1,7 +1,6 @@
 command -v nvim 2>&1 >/dev/null && alias vim=nvim
 alias l=ls
 command -v tmux 2>&1 > /dev/null && alias tmux='TERM=xterm-256color tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
-export PATH=/opt/spotify-devex/bin:$PATH
 alias ls='ls -G'
 if [ -x $(command -v pyenv) ]
 then
@@ -16,3 +15,8 @@ ROOT_BASH_COMPLETION=$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh
 # Set up fzf terminal tools
 # Run `$(brew --prefix)/opt/fzf/install` to generate.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# SPT CONFIG BEGIN
+export PATH=$PATH:/Users/aholmberg/.local/bin
+# SPT CONFIG END
+export PATH=/opt/spotify-devex/bin:$PATH

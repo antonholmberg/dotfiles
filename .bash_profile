@@ -45,3 +45,7 @@ SPOTIFY_DEVEX=/opt/spotify-devex/bin
 if [[ -f ~/.bashrc ]]; then
   source ~/.bashrc
 fi
+
+if [[ -d "$HOME/go/bin" ]]; then
+  export PATH="$HOME/go/bin:$PATH"
+fi
