@@ -17,3 +17,4 @@ ROOT_BASH_COMPLETION=$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PATH=$PATH:/Users/aholmberg/.local/bin
+export PATH=/opt/spotify-devex/bin:$PATH
